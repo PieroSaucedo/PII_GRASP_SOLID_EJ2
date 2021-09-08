@@ -26,6 +26,13 @@ namespace Full_GRASP_And_SOLID
             recipe.AddStep(new Step(GetProduct("Café"), 100, GetEquipment("Cafetera"), 120));
             recipe.AddStep(new Step(GetProduct("Leche"), 200, GetEquipment("Hervidor"), 60));
             ConsolePrinter.PrintRecipe(recipe);
+            /*
+            Hice uso del patrón EXPERT y principio SRP de modo que una misma clase no quedara sobrecargada con las
+            responsabilidades de hacer y conocer. Entonces las responsabilidades quedaron redistribuidas de modo que cada
+            clase se encarga únicamente de hacer y conocer las cosas que le corresponden exclusivamente a dicha clase, en
+            este caso, creé la clase ConsolePrinter (dentro de Printer.cs) para que las recetas no se impriman por si 
+            mismas.
+            */
         }
 
         private static void PopulateCatalogs()
